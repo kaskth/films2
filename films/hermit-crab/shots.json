@@ -1,0 +1,411 @@
+{
+    "title":  "The Duel (30 s, 16:9, 2D flat vector, narrated)",
+    "version":  2,
+    "fps":  24,
+    "width":  1920,
+    "height":  1080,
+    "duration_frames":  720,
+    "seed":  7103,
+    "look":  "low-sun",
+    "shots":  [
+                  {
+                      "id":  "S01",
+                      "start":  0,
+                      "end":  58,
+                      "location":  "the pool floor, extreme close",
+                      "description":  "A claw slams into wet sand at full frame; the burst of grit blows toward the lens and the camera pulls back to reveal the arena and the shell in the middle of it.",
+                      "action":  "crab A\u0027s big claw strikes the sand and stays planted there",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  1.1
+                                              ],
+                                        "read":  "the blow"
+                                    },
+                                    {
+                                        "t":  [
+                                                  1.1,
+                                                  2.39
+                                              ],
+                                        "read":  "this is a contest, and there is a prize"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "ECU",
+                                     "angle":  "low",
+                                     "lens_mm":  85,
+                                     "move":  {
+                                                  "line":  "pull-back, 1.2 s, fast ease-out, from the claw to the whole arena",
+                                                  "type":  "pull-back",
+                                                  "speed":  "fast",
+                                                  "moving_at_start":  true
+                                              }
+                                 },
+                      "hook":  "motion from frame 1: the claw is already mid-swing and the grit is already flying",
+                      "action_from_frame_1":  true,
+                      "sound":  "hard grit impact on the strike, then one water slap as the arena opens up; the shell knock is not heard yet",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "One shell. Two tenants.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO1.wav",
+                      "vo_at":  0.05
+                  },
+                  {
+                      "id":  "S02",
+                      "start":  58,
+                      "end":  118,
+                      "location":  "the arena, low and wide",
+                      "description":  "Two crabs stand at opposite ends of the frame, the pale shell between them, and nothing moves except the water edge.",
+                      "action":  "both crabs hold still, claws half raised; only their eye stalks turn",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  1.14
+                                              ],
+                                        "read":  "two equal opponents"
+                                    },
+                                    {
+                                        "t":  [
+                                                  1.14,
+                                                  2.47
+                                              ],
+                                        "read":  "the shell is the only bright thing here"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "WS",
+                                     "angle":  "low",
+                                     "lens_mm":  35,
+                                     "move":  {
+                                                  "line":  "tracking, 1.2 s, slow linear, across the sand",
+                                                  "type":  "tracking",
+                                                  "speed":  "slow",
+                                                  "moving_at_start":  true
+                                              }
+                                 },
+                      "sound":  "pool ambience only, one distant gull, nothing else",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "",
+                      "vo_at":  0
+                  },
+                  {
+                      "id":  "S03",
+                      "start":  118,
+                      "end":  158,
+                      "location":  "the ridge behind the arena",
+                      "description":  "A row of eyes sits along the ridge at the back of the pool, at the same height, and they blink one after another from left to right.",
+                      "action":  "the eyes blink in sequence, left to right, and then all turn toward the arena",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  0.75
+                                              ],
+                                        "read":  "a crowd"
+                                    },
+                                    {
+                                        "t":  [
+                                                  0.75,
+                                                  1.64
+                                              ],
+                                        "read":  "they are not here by accident"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "MS",
+                                     "angle":  "eye",
+                                     "lens_mm":  50,
+                                     "move":  {
+                                                  "line":  "push-in, 1.7 s, slow ease-in-out, toward the middle eye",
+                                                  "type":  "push-in",
+                                                  "speed":  "medium",
+                                                  "moving_at_start":  true
+                                              }
+                                 },
+                      "sound":  "one bubble tick per blink, pitched differently each time",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "And a neighbourhood.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO2.wav",
+                      "vo_at":  0.05
+                  },
+                  {
+                      "id":  "S04",
+                      "start":  158,
+                      "end":  209,
+                      "location":  "crab A, close",
+                      "description":  "Crab A taps the sand twice with the small claw, the way a clerk would stamp a form.",
+                      "action":  "two taps, the second one harder, and the claw settles",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  0.97
+                                              ],
+                                        "read":  "a ritual, not a brawl"
+                                    },
+                                    {
+                                        "t":  [
+                                                  0.97,
+                                                  2.1
+                                              ],
+                                        "read":  "the rules are being read out"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "CU",
+                                     "angle":  "low",
+                                     "lens_mm":  50,
+                                     "move":  {
+                                                  "line":  "locked, with a 2 percent settle as the second tap lands",
+                                                  "type":  "locked",
+                                                  "speed":  "none",
+                                                  "moving_at_start":  false
+                                              }
+                                 },
+                      "sound":  "two dry taps on packed sand, exactly on the beat, and a third empty beat after them",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "No blood. No retreat.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO3a.wav",
+                      "vo_at":  0.1
+                  },
+                  {
+                      "id":  "S05",
+                      "start":  209,
+                      "end":  274,
+                      "location":  "between the two crabs",
+                      "description":  "Crab A charges; crab B braces; the claws lock and a cloud of sand swallows the frame, shaking it once.",
+                      "action":  "the two crabs collide off centre and the sand cloud swallows both",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  1.23
+                                              ],
+                                        "read":  "the charge"
+                                    },
+                                    {
+                                        "t":  [
+                                                  1.23,
+                                                  2.68
+                                              ],
+                                        "read":  "the impact happens off screen, in sand"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "MS",
+                                     "angle":  "eye",
+                                     "lens_mm":  35,
+                                     "move":  {
+                                                  "line":  "pan, 1.4 s, fast ease-in-out, onto the collision",
+                                                  "type":  "whip-pan",
+                                                  "speed":  "fast",
+                                                  "moving_at_start":  true
+                                              }
+                                 },
+                      "sound":  "hard scrape, then a sand burst and one low thud; no voice at all in this shot",
+                      "transition":  "impact cut, mid action",
+                      "status":  "planned",
+                      "vo":  "The loser leaves empty.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO3b.wav",
+                      "vo_at":  0.1
+                  },
+                  {
+                      "id":  "S06",
+                      "start":  274,
+                      "end":  305,
+                      "location":  "the arena, from above the fight",
+                      "description":  "From high up: crab B lies upside down, one leg pedalling, while crab A stands over it without moving.",
+                      "action":  "the leg pedals twice and stops",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  0.58
+                                              ],
+                                        "read":  "the result"
+                                    },
+                                    {
+                                        "t":  [
+                                                  0.58,
+                                                  1.26
+                                              ],
+                                        "read":  "this was quick"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "MS",
+                                     "angle":  "high",
+                                     "lens_mm":  35,
+                                     "move":  {
+                                                  "line":  "locked high angle, no move",
+                                                  "type":  "locked",
+                                                  "speed":  "none",
+                                                  "moving_at_start":  false
+                                              }
+                                 },
+                      "sound":  "one hollow shell knock as B lands, then a thin tick for each pedal",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "Eleven seconds.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO4.wav",
+                      "vo_at":  0.05
+                  },
+                  {
+                      "id":  "S07",
+                      "start":  305,
+                      "end":  384,
+                      "location":  "the arena, wide, toward the rocks",
+                      "description":  "Crab B walks away with no shell on its back, small, into the dark gap between two rocks, and the frame does not follow it.",
+                      "action":  "B walks out of frame while A stays, still, in the foreground",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  1.5
+                                              ],
+                                        "read":  "the cost"
+                                    },
+                                    {
+                                        "t":  [
+                                                  1.5,
+                                                  3.26
+                                              ],
+                                        "read":  "it is not coming back"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "WS",
+                                     "angle":  "eye",
+                                     "lens_mm":  85,
+                                     "move":  {
+                                                  "line":  "locked long lens, the frame never follows the loser",
+                                                  "type":  "locked",
+                                                  "speed":  "none",
+                                                  "moving_at_start":  false
+                                              }
+                                 },
+                      "sound":  "footsteps in grit, thinning out, then nothing",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "The loser is already dead. Nobody told it.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO5.wav",
+                      "vo_at":  0.1
+                  },
+                  {
+                      "id":  "S08",
+                      "start":  384,
+                      "end":  480,
+                      "location":  "the shell, close",
+                      "description":  "Crab A climbs into the pale shell, settles, and turns: the eyes have come down off the ridge and formed a line.",
+                      "action":  "A backs into the shell, then turns its head to find the crowd much closer and in a row",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  1.83
+                                              ],
+                                        "read":  "the prize, taken"
+                                    },
+                                    {
+                                        "t":  [
+                                                  1.83,
+                                                  3.97
+                                              ],
+                                        "read":  "the crowd is not a crowd, it is a queue"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "MCU",
+                                     "angle":  "eye",
+                                     "lens_mm":  50,
+                                     "move":  {
+                                                  "line":  "push-in, 2 s, slow, from the shell to the line of eyes behind it",
+                                                  "type":  "push-in",
+                                                  "speed":  "slow",
+                                                  "moving_at_start":  true
+                                              }
+                                 },
+                      "sound":  "the shell settles with a hollow knock, then a hundred small clicks, all slightly out of time",
+                      "transition":  "cut",
+                      "status":  "planned",
+                      "vo":  "Nobody is watching. The winner gets the shell.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO6.wav",
+                      "vo_at":  0.1
+                  },
+                  {
+                      "id":  "S09",
+                      "start":  480,
+                      "end":  720,
+                      "location":  "inside the shell",
+                      "description":  "The line of eyes fills the frame and keeps coming; the last thing visible is one small eye inside the shell, then black.",
+                      "action":  "the eyes advance until they cover the frame; the small eye does not blink",
+                      "reads":  [
+                                    {
+                                        "t":  [
+                                                  0,
+                                                  4.59
+                                              ],
+                                        "read":  "the queue is longer than the frame"
+                                    },
+                                    {
+                                        "t":  [
+                                                  4.59,
+                                                  9.97
+                                              ],
+                                        "read":  "the prize was the debt"
+                                    }
+                                ],
+                      "camera":  {
+                                     "size":  "ECU",
+                                     "angle":  "eye",
+                                     "lens_mm":  85,
+                                     "move":  {
+                                                  "line":  "push-in to black, 5 s, accelerating",
+                                                  "type":  "push-in",
+                                                  "speed":  "fast",
+                                                  "moving_at_start":  true
+                                              }
+                                 },
+                      "sound":  "clicks rise, one slowed shell knock at 29.4 s, then near silence to black",
+                      "transition":  "end on a cut to black (1.2 s)",
+                      "status":  "planned",
+                      "vo":  "The queue gets the winner.",
+                      "text_on_screen":  [
+
+                                         ],
+                      "vo_file":  "VO7.wav",
+                      "vo_at":  0.3
+                  }
+              ],
+    "vo_dir":  "audio/vo-mine"
+}

@@ -1,0 +1,35 @@
+﻿1
+00:00:00,000 --> 00:00:03,900
+One shell, two tenants, and a neighborhood.
+
+2
+00:00:04,540 --> 00:00:06,240
+No blood, no retreat.
+
+3
+00:00:06,520 --> 00:00:08,540
+The loser leaves empty.
+
+4
+00:00:09,040 --> 00:00:09,960
+11 seconds.
+
+5
+00:00:10,380 --> 00:00:12,200
+The loser is already dead.
+
+6
+00:00:12,480 --> 00:00:13,440
+Nobody told it.
+
+7
+00:00:13,680 --> 00:00:14,840
+Nobody is watching.
+
+8
+00:00:15,160 --> 00:00:16,560
+The winner gets the shell.
+
+9
+00:00:16,800 --> 00:00:18,700
+The cue gets the winner.

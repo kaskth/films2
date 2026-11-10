@@ -1,0 +1,57 @@
+{
+ "duration": 30.0,
+ "out": "audio/mix-draft-v1.wav",
+ "layers": [
+  {
+   "file": "audio\\film.wav",
+   "at": 0.0,
+   "gain_db": 0,
+   "bus": "music"
+  },
+  {
+   "file": "audio/vo-t/VO1.wav",
+   "at": 0.35,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO2.wav",
+   "at": 3.4,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO3.wav",
+   "at": 5.8,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO4.wav",
+   "at": 9.0,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO5.wav",
+   "at": 14.15,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO6.wav",
+   "at": 16.55,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO7.wav",
+   "at": 21.45,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO8.wav",
+   "at": 25.3,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO9.wav",
+   "at": 28.6,
+   "bus": "dialogue"
+  }
+ ]
+}

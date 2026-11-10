@@ -1,0 +1,22 @@
+{
+  "state": "done",
+  "url": "file:///D:/coda/films2/films/hermit-crab/engine/arena.html?capture=1&w=960&h=540",
+  "out": "D:\\coda\\films2\\films\\hermit-crab\\review\\frames",
+  "pid": 5184,
+  "started_at": "2026-11-10T14:59:27.102Z",
+  "updated_at": "2026-11-10T14:59:48.768Z",
+  "renderer": "canvas2d",
+  "total": 720,
+  "start": 0,
+  "end": 719,
+  "workers": 1,
+  "format": "png",
+  "done": 720,
+  "skipped": 0,
+  "fps": 33.72,
+  "eta_s": 0,
+  "seconds": 21.4,
+  "finished_at": "2026-11-10T14:59:48.768Z",
+  "pattern": "D:\\coda\\films2\\films\\hermit-crab\\review\\frames/%06d.png",
+  "video": "D:\\coda\\films2\\films\\hermit-crab\\renders\\picture-v1.mp4"
+}

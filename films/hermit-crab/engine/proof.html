@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>hermit-crab · direction proof v2</title>
+<style>html,body{margin:0;background:#111}canvas{display:block}</style>
+</head>
+<body>
+<script>
+// Direction proof for "The Duel": one frame, three visual languages, all 2D flat vector.
+// Contract (tools/capture.mjs): window.READY, window.renderFrame(i), window.captureFrame(i).
+// params: look=A|B|C, board=1, w, h
+
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1280, H = +q.get('h') || 720;
+const BOARD = q.get('board') === '1';
+
+const LOOKS = {
+  A: { name: 'A · Paper Day', sub: 'warm print colour · broken ink · flat light',
+    sky:'#f1e0bd', skyLow:'#e9d3a8', water:'#7cb0ac', waterLo:'#639a97', foam:'#cfe4e0',
+    sand:'#dcb realiz', sandTop:'#dcb668', sandMid:'#cba055', sandLo:'#b98f45',
+    rock:'#6f5c3e', rockTop:'#8b7551', rockDark:'#55452c',
+    shellA:'#c8563c', shellB:'#48696d', prize:'#efe3c6',
+    ink:'#221d18', paper:'#f7efdd', rim:null, hatch:false, off:2.4, lw:0.030, sun:false, shadow:0.10 },
+  B: { name: 'B · Low Sun', sub: 'hot two-tone cels · hard rim light · deep shadow',
+    sky:'#f2a765', skyLow:'#e08c4c', water:'#1e4f70', waterLo:'#123c58', foam:'#9fc4d4',
+    sand:'#cf8446', sandTop:'#d98f4d', sandMid:'#b06b34', sandLo:'#8b4d22',
+    rock:'#2a3141', rockTop:'#465266', rockDark:'#191f2b',
+    shellA:'#d9473a', shellB:'#3a5d8b', prize:'#f2e4c6',
+    ink:'#120d12', paper:null, rim:'#ffd39a', hatch:false, off:0, lw:0.028, sun:true, shadow:0.34 },
+  C: { name: 'C · Two Inks', sub: 'paper and one ink · light only where nothing is carved',
+    sky:'#efe6d2', skyLow:'#efe6d2', water:'#1a1512', waterLo:'#1a1512', foam:'#efe6d2',
+    sand:'#efe6d2', sandTop:'#efe6d2', sandMid:'#efe6d2', sandLo:'#efe6d2',
+    rock:'#1a1512', rockTop:'#1a1512', rockDark:'#1a1512',
+    shellA:'#efe6d2', shellB:'#efe6d2', prize:'#b4472e',
+    ink:'#1a1512', paper:'#efe6d2', rim:null, hatch:true, off:0, lw:0.046, sun:false, shadow:0 },
+};
+LOOKS.A.sand = LOOKS.A.sandTop;
+
+function scene(g, W, H, L) {
+  const X = (u) => u * W, Y = (v) => v * H, S = Math.min(W, H);
+  const lw = L.lw * S;
+  g.lineJoin = 'round'; g.lineCap = 'round';
+  const F = (c) => { g.fillStyle = c; };
+  const I = (w = lw, c = L.ink) => { g.strokeStyle = c; g.lineWidth = w; };
+  const P = (pts) => { g.beginPath(); g.moveTo(X(pts[0][0]), Y(pts[0][1]));
+    for (let i = 1; i < pts.length; i++) g.lineTo(X(pts[i][0]), Y(pts[i][1])); g.closePath(); };
+  const shape = (pts, colour, stroke = true) => { P(pts); F(colour); g.fill();
+    if (stroke) { I(); g.save(); if (L.off) g.translate(L.off, -L.off * 0.6); P(pts); g.stroke(); g.restore(); } };
+
+  // ---------- sky
+  F(L.sky); g.fillRect(0, 0, W, H);
+  F(L.skyLow); g.fillRect(0, H * 0.20, W, H * 0.20);
+  if (L.sun) { F(L.rim); g.beginPath(); g.arc(X(0.855), Y(0.075), S * 0.062, 0, 7); g.fill(); }
+
+  // ---------- far wall of rock, two facets
+  shape([[-0.04,0.245],[0.02,0.14],[0.10,0.11],[0.17,0.17],[0.21,0.245]], L.rockTop);
+  shape([[0.17,0.17],[0.21,0.245],[0.30,0.245],[0.26,0.15],[0.20,0.12]], L.rockDark);
+  shape([[0.55,0.245],[0.60,0.10],[0.70,0.06],[0.79,0.10],[0.86,0.17],[0.92,0.245]], L.rockTop);
+  shape([[0.79,0.10],[0.86,0.17],[0.92,0.245],[1.04,0.245],[1.02,0.13],[0.90,0.07]], L.rockDark);
+
+  // ---------- water
+  const wt = []; for (let i = 0; i <= 30; i++) wt.push([i / 30 * 1.1 - 0.05, 0.243 + Math.sin(i * 1.35) * 0.006]);
+  shape(wt.concat([[1.05,0.42],[-0.05,0.42]]), L.water);
+  F(L.waterLo); P([[0,0.362],[0.34,0.355],[0.68,0.365],[1,0.357],[1,0.42],[0,0.42]]); g.fill();
+  F(L.foam); P([[0,0.243],[0.35,0.238],[0.7,0.245],[1,0.240],[1,0.258],[0.7,0.263],[0.35,0.256],[0,0.261]]); g.fill();
+  I(lw * 0.5, L.foam || L.ink); g.globalAlpha = 0.5;
+  [[0.10,0.300,0.11],[0.68,0.282,0.08],[0.78,0.318,0.12],[0.30,0.345,0.07]].forEach(([x, y, w]) => {
+    g.beginPath(); g.moveTo(X(x), Y(y)); g.lineTo(X(x + w), Y(y)); g.stroke(); });
+  g.globalAlpha = 1;
+
+  // ---------- wet sand
+  const st = []; for (let i = 0; i <= 30; i++) st.push([i / 30 * 1.1 - 0.05, 0.416 + Math.sin(i * 1.1 + 2) * 0.005]);
+  shape(st.concat([[1.05,1.05],[-0.05,1.05]]), L.sand);
+  F(L.sandMid); P([[0,0.675],[0.22,0.660],[0.5,0.675],[0.78,0.660],[1,0.675],[1,1.05],[0,1.05]]); g.fill();
+  F(L.sandLo); P([[0,0.930],[0.3,0.912],[0.62,0.930],[1,0.912],[1,1.05],[0,1.05]]); g.fill();
+
+  // ---------- the crowd behind the ridge: eyes only, unexplained
+  const eyes = [[0.105,0.470,1.0],[0.165,0.462,0.84],[0.222,0.474,1.06],[0.585,0.468,0.9],[0.645,0.460,1.0],[0.703,0.473,0.82],[0.762,0.464,0.95]];
+  eyes.forEach(([x, y, k]) => {
+    const r = S * 0.0165 * k;
+    F(L.rockDark); g.beginPath(); g.arc(X(x), Y(y + r * 1.15), r * 2.35, Math.PI, 2 * Math.PI); g.closePath(); g.fill();
+    F(L.paper || L.foam); g.beginPath(); g.arc(X(x) - r * 0.15, Y(y), r, 0, 7); g.fill();
+    I(lw * 0.42); g.beginPath(); g.arc(X(x) - r * 0.15, Y(y), r, 0, 7); g.stroke();
+    F(L.ink); g.beginPath(); g.arc(X(x) + r * 0.26, Y(y) + r * 0.05, r * 0.42, 0, 7); g.fill();
+  });
+
+  // ---------- the prize, front and centre, near enough to fight over
+  if (L.shadow) { F(L.sandLo); g.globalAlpha = 0.8;
+    P([[0.400,0.850],[0.590,0.842],[0.568,0.890],[0.378,0.898]]); g.fill(); g.globalAlpha = 1; }
+  shellShape(g, X(0.497), Y(0.858), S * 0.205, L, -0.14, L.prize, 'prize');
+
+  // ---------- the two crabs, facing each other across it
+  crab(g, X(0.222), Y(0.935), S * 0.40, L, L.shellA, 1, 'lunge');
+  crab(g, X(0.782), Y(0.935), S * 0.42, L, L.shellB, -1, 'brace');
+
+  // ---------- carved marks
+  if (L.hatch) {
+    I(lw * 0.38, L.ink);
+    for (let i = 0; i < 22; i++) { const x = -0.01 + i * 0.048, y = 0.760 + (i % 4) * 0.020;
+      g.beginPath(); g.moveTo(X(x), Y(y)); g.lineTo(X(x - 0.010 - (i % 3) * 0.004), Y(y + 0.020)); g.stroke(); }
+    for (let i = 0; i < 9; i++) { const x = 0.06 + i * 0.10;
+      g.beginPath(); g.moveTo(X(x), Y(0.965 - (i % 2) * 0.012)); g.lineTo(X(x + 0.012), Y(0.995 - (i % 2) * 0.012)); g.stroke(); }
+  }
+
+  if (L.paper) { I(lw * 0.7); g.globalAlpha = 0.22; g.strokeRect(lw * 0.5, lw * 0.5, W - lw, H - lw); g.globalAlpha = 1; }
+}
+
+// ---------------------------------------------------------------- crab
+// local units: 1.0 = crab width, origin at the ground point, y negative = up
+function crab(g, cx, cy, s, L, body, facing, pose) {
+  const u = (x, y) => [cx + x * s * facing, cy + y * s];
+  const lw = L.lw * s * 1.15;
+  const I = (w = lw, c = L.ink) => { g.strokeStyle = c; g.lineWidth = w; };
+  const F = (c) => { g.fillStyle = c; };
+  const limb = (pts, w) => { I(s * w); g.beginPath();
+    let p = u(pts[0][0], pts[0][1]); g.moveTo(p[0], p[1]);
+    for (let i = 1; i < pts.length; i++) { p = u(pts[i][0], pts[i][1]); g.lineTo(p[0], p[1]); }
+    g.stroke(); };
+  const solid = (pts, colour, w = lw) => { g.beginPath();
+    let p = u(pts[0][0], pts[0][1]); g.moveTo(p[0], p[1]);
+    for (let i = 1; i < pts.length; i++) { p = u(pts[i][0], pts[i][1]); g.lineTo(p[0], p[1]); }
+    g.closePath(); F(colour); g.fill(); I(w); g.stroke(); };
+  const curve = (pts, colour, w) => { g.beginPath();
+    let p = u(pts[0][0], pts[0][1]); g.moveTo(p[0], p[1]);
+    const c = (i, k) => u(pts[i][0], pts[i][1]);
+    for (let i = 1; i < pts.length - 1; i += 2) {
+      const a = c(i, 0), b = c(i + 1, 0); g.quadraticCurveTo(a[0], a[1], b[0], b[1]); }
+    if (colour) { I(w || lw); g.stroke(); } };
+
+  // ground shadow
+  if (L.shadow) { F(L.sandLo); g.globalAlpha = 0.8;
+    const sh = L.shadow; g.beginPath();
+    let p = u(-0.34 - sh, 0.0); g.moveTo(p[0], p[1]);
+    p = u(0.42 - sh * 0.4, -0.01); g.lineTo(p[0], p[1]);
+    p = u(0.46 + sh * 0.4, 0.030); g.lineTo(p[0], p[1]);
+    p = u(-0.30 - sh, 0.030); g.lineTo(p[0], p[1]);
+    g.closePath(); g.fill(); g.globalAlpha = 1; }
+
+  // far-side legs (darker)
+  const far = L.hatch ? L.ink : body;
+  limb([[0.02,-0.30],[-0.16,-0.10],[-0.20,0.0]], 0.052);
+  limb([[-0.06,-0.26],[-0.30,-0.06],[-0.34,0.0]], 0.048);
+  // near-side legs
+  const legs = pose === 'lunge'
+    ? [[[0.10,-0.34],[0.30,-0.14],[0.34,0.0]],[[0.02,-0.36],[0.06,-0.14],[0.02,0.0]],[[-0.12,-0.34],[-0.26,-0.12],[-0.30,0.0]]]
+    : [[[0.08,-0.36],[0.26,-0.16],[0.30,0.0]],[[0.00,-0.38],[0.02,-0.16],[-0.02,0.0]],[[-0.14,-0.36],[-0.30,-0.14],[-0.34,0.0]]];
+  legs.forEach((l) => limb(l, 0.058));
+  // feet
+  legs.forEach((l) => { const p = u(l[2][0], l[2][1]); I(s * 0.058); g.beginPath();
+    g.moveTo(p[0] - s * 0.02, p[1]); g.lineTo(p[0] + s * 0.035 * facing, p[1]); g.stroke(); });
+
+  // the shell it is wearing: a turret, mouth forward
+  shellShape(g, ...u(-0.10, -0.46), s * 0.62, L, -0.22 * facing, body, pose === 'lunge' ? 'wearer' : 'wearer2');
+
+  // head: a small dark mass at the mouth
+  solid([[0.10,-0.36],[0.24,-0.44],[0.26,-0.30],[0.12,-0.26]], L.hatch ? L.ink : body, lw * 0.9);
+  // antennae
+  curve([[0.24,-0.40],[0.40,-0.46],[0.48,-0.62]], null, s * 0.018);
+  curve([[0.22,-0.34],[0.38,-0.36],[0.52,-0.44]], null, s * 0.015);
+  // eye stalks
+  const eyeA = pose === 'lunge' ? [0.34,-0.74] : [0.30,-0.78];
+  const eyeB = pose === 'lunge' ? [0.20,-0.80] : [0.17,-0.83];
+  limb([[0.22,-0.42],eyeA], 0.045);
+  limb([[0.17,-0.40],eyeB], 0.042);
+  [eyeA, eyeB].forEach((e, i) => {
+    const p = u(e[0], e[1]), r = s * (i ? 0.068 : 0.075);
+    g.beginPath(); g.arc(p[0], p[1], r, 0, 7);
+    F(L.paper || L.foam); g.fill(); I(lw * 0.95); g.stroke();
+    F(L.ink); g.beginPath(); g.arc(p[0] + r * 0.34 * facing, p[1] + r * 0.06, r * 0.36, 0, 7); g.fill();
+  });
+
+  // claws
+  const claws = pose === 'lunge'
+    ? [[[0.16,-0.46],[0.44,-0.60],[0.62,-0.54],0.115],[[0.12,-0.38],[0.36,-0.34],[0.52,-0.30],0.085]]
+    : [[[0.14,-0.46],[0.36,-0.66],[0.50,-0.76],0.105],[[0.10,-0.40],[0.34,-0.50],[0.50,-0.56],0.088]];
+  claws.forEach(([a, b, c, w]) => {
+    limb([a, b, c], w);
+    const p = u(c[0], c[1]);
+    g.save(); g.translate(p[0], p[1]); g.scale(facing, 1); g.rotate(pose === 'lunge' ? -0.55 : -0.95);
+    g.beginPath(); g.ellipse(0, 0, s * w * 1.35, s * w * 1.02, 0, 0, 7);
+    F(L.hatch ? L.ink : body); g.fill(); I(lw * 0.95); g.stroke();
+    g.beginPath(); g.moveTo(s * w * 0.7, -s * w * 0.28); g.lineTo(s * w * 1.85, -s * w * 0.52); g.stroke();
+    g.beginPath(); g.moveTo(s * w * 1.85, -s * w * 0.52); g.lineTo(s * w * 1.55, s * w * 0.10); g.stroke();
+    g.restore();
+  });
+}
+
+function shellShape(g, cx, cy, s, L, rot, colour, kind) {
+  const lw = L.lw * s * 1.15;
+  g.save(); g.translate(cx, cy); g.rotate(rot);
+  g.lineJoin = 'round'; g.lineCap = 'round';
+  // cone with a rounded mouth and a pointed spire
+  const body = () => { g.beginPath();
+    g.moveTo(-s * 0.46, s * 0.30);
+    g.quadraticCurveTo(-s * 0.60, -s * 0.22, -s * 0.10, -s * 0.46);
+    g.quadraticCurveTo(s * 0.34, -s * 0.56, s * 0.44, -s * 0.10);
+    g.quadraticCurveTo(s * 0.48, s * 0.22, s * 0.18, s * 0.32);
+    g.closePath(); };
+  body(); g.fillStyle = colour; g.fill();
+  g.strokeStyle = L.ink; g.lineWidth = lw; g.stroke();
+  // bands + spiral
+  g.lineWidth = lw * 0.55;
+  g.beginPath(); g.moveTo(-s * 0.40, s * 0.10); g.quadraticCurveTo(-s * 0.10, -s * 0.30, s * 0.34, s * 0.02); g.stroke();
+  g.beginPath(); g.moveTo(-s * 0.30, s * 0.24); g.quadraticCurveTo(-s * 0.02, -s * 0.10, s * 0.26, s * 0.20); g.stroke();
+  if (kind !== 'prize') { // the spire
+    g.beginPath(); g.moveTo(-s * 0.10, -s * 0.44); g.lineTo(-s * 0.30, -s * 0.60); g.lineTo(-s * 0.02, -s * 0.50); g.closePath();
+    g.fillStyle = colour; g.fill(); g.lineWidth = lw * 0.8; g.stroke();
+  }
+  g.restore();
+}
+
+// ---------------------------------------------------------------- contract
+const canvas = document.createElement('canvas');
+canvas.width = W; canvas.height = H; document.body.appendChild(canvas);
+const g = canvas.getContext('2d');
+
+window.renderFrame = () => {
+  if (!BOARD) { scene(g, W, H, LOOKS[q.get('look') || 'A']); return; }
+  g.fillStyle = '#e9e4da'; g.fillRect(0, 0, W, H);
+  const keys = ['A', 'B', 'C'], cw = W / 3, ch = cw * 9 / 16, pad = W * 0.011;
+  keys.forEach((k, i) => {
+    const x = i * cw + pad * 0.5, y = pad;
+    const sub = document.createElement('canvas'); sub.width = Math.round(cw * 2); sub.height = Math.round(ch * 2);
+    scene(sub.getContext('2d'), sub.width, sub.height, LOOKS[k]);
+    g.drawImage(sub, x, y, cw - pad, ch);
+    g.strokeStyle = '#b9b2a3'; g.lineWidth = Math.max(1, W * 0.0012); g.strokeRect(x, y, cw - pad, ch);
+    g.fillStyle = '#1e1c18'; g.font = `600 ${Math.round(H * 0.058)}px Georgia, "Times New Roman", serif`;
+    g.fillText(LOOKS[k].name, x + cw * 0.03, y + ch + H * 0.085);
+    g.fillStyle = '#5a554a'; g.font = `${Math.round(H * 0.042)}px Georgia, "Times New Roman", serif`;
+    g.fillText(LOOKS[k].sub, x + cw * 0.03, y + ch + H * 0.155);
+  });
+};
+window.captureFrame = (i, type = 'image/png', quality = 0.95) => { window.renderFrame(); return canvas.toDataURL(type, quality); };
+window.READY = Promise.resolve({ frames: 1, fps: 24, width: W, height: H, renderer: 'canvas2d' });
+window.renderFrame();
+</script>
+</body>
+</html>

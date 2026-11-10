@@ -1,0 +1,61 @@
+{
+ "query": "hermit crab shell",
+ "type": "image",
+ "results": [
+  {
+   "source": "wikimedia",
+   "id": "119478848",
+   "title": "Hermit crab (Coenobita rubescens) shell Giant East African snail (Archachatina m",
+   "creator": "Charles J. Sharp",
+   "licence": "cc-by-sa",
+   "page": "https://commons.wikimedia.org/wiki/File:Hermit_crab_(Coenobita_rubescens)_shell_Giant_East_African_snail_(Archachatina_marginata)_Principe.jpg",
+   "file": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Hermit_crab_%28Coenobita_rubescens%29_shell_Giant_East_African_snail_%28Archachatina_marginata%29_Principe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Hermit_crab_%28Coenobita_rubescens%29_shell_Giant_East_African_snail_%28Archachatina_marginata%29_Principe.jpg/500px-Hermit_crab_%28Coenobita_rubescens%29_shell_Giant_East_African_snail_%28Archachatina_marginata%29_Principe.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "type": "image",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "licence_name": "CC BY-SA 4.0",
+   "n": 1
+  },
+  {
+   "source": "wikimedia",
+   "id": "132233382",
+   "title": "Hermit crab with a shell on a sandy bottom at night.jpg",
+   "creator": "Dmitry Domrin",
+   "licence": "cc-by",
+   "page": "https://commons.wikimedia.org/wiki/File:Hermit_crab_with_a_shell_on_a_sandy_bottom_at_night.jpg",
+   "file": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hermit_crab_with_a_shell_on_a_sandy_bottom_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Hermit_crab_with_a_shell_on_a_sandy_bottom_at_night.jpg/500px-Hermit_crab_with_a_shell_on_a_sandy_bottom_at_night.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "type": "image",
+   "licence_url": "https://creativecommons.org/licenses/by/4.0",
+   "licence_name": "CC BY 4.0",
+   "n": 2
+  },
+  {
+   "source": "wikimedia",
+   "id": "90784023",
+   "title": "A hermit crab (Paguroidea) emerges from its shell.jpg",
+   "creator": "Satheesha J.",
+   "licence": "cc-by-sa",
+   "page": "https://commons.wikimedia.org/wiki/File:A_hermit_crab_(Paguroidea)_emerges_from_its_shell.jpg",
+   "file": "https://upload.wikimedia.org/wikipedia/commons/3/38/A_hermit_crab_%28Paguroidea%29_emerges_from_its_shell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/A_hermit_crab_%28Paguroidea%29_emerges_from_its_shell.jpg/500px-A_hermit_crab_%28Paguroidea%29_emerges_from_its_shell.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "type": "image",
+   "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+   "licence_name": "CC BY-SA 4.0",
+   "n": 3
+  },
+  {
+   "source": "wikimedia",
+   "id": "175451672",
+   "title": "Red hermit crab looking out of its snail shell (Niue).jpg",
+   "creator": "Pseudopanax at English Wikipedia",
+   "licence": "pd",
+   "page": "https://commons.wikimedia.org/wiki/File:Red_hermit_crab_looking_out_of_its_snail_shell_(Niue).jpg",
+   "file": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Red_hermit_crab_looking_out_of_its_snail_shell_%28Niue%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+   "thumb": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Red_hermit_crab_looking_out_of_its_snail_shell_%28Niue%29.jpg/500px-Red_hermit_crab_looking_out_of_its_snail_shell_%28Niue%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+   "type": "image",
+   "licence_name": "Public domain",
+   "n": 4
+  }
+ ]
+}

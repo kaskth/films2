@@ -1,0 +1,38 @@
+# not ours to publish: the reference film belongs to its creator
+refs/king_cobra.mp4
+refs/stills/
+
+# 131 MB each, over GitHub's 100 MB file limit, and derived:
+# regenerate with  rea-video stems refs/king_cobra.mp4
+research/rea-output/stems/
+
+# harness aliases: Windows junctions, recreated by setup-links.ps1
+.agent
+.claude/
+.cursor/
+.opencode/skills/
+
+# nested git histories, renamed so the parent repo sees plain files
+.agents/skills/cinecode/.git__nested/
+.agents/skills/rea-video/.git__nested/
+films/sea-turtle/.git__nested/
+films/hermit-crab/.git__nested/
+
+# build artefacts
+films/*/review/frames/
+films/*/review/sheet/
+films/*/review/check/
+films/*/review/chk/
+films/*/review/s05/
+films/*/review/qc-*/
+films/*/renders/picture-*.mp4
+films/*/logs/*.log
+films/*/tools/__pycache__/
+
+# python
+__pycache__/
+*.pyc
+
+# editors and OS
+.DS_Store
+Thumbs.db

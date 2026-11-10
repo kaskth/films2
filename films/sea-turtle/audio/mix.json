@@ -1,0 +1,273 @@
+{
+ "duration": 31.0,
+ "out": "audio/mix-v1.wav",
+ "layers": [
+  {
+   "file": "audio/film.wav",
+   "at": 0.0,
+   "gain_db": 0,
+   "bus": "music"
+  },
+  {
+   "file": "audio/vo-t/VO1.wav",
+   "at": 0.35,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO2.wav",
+   "at": 3.4,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO3.wav",
+   "at": 5.8,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO4.wav",
+   "at": 9.0,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO5.wav",
+   "at": 14.15,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO6.wav",
+   "at": 16.55,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO7.wav",
+   "at": 21.45,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO8.wav",
+   "at": 25.3,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/vo-t/VO9.wav",
+   "at": 28.1,
+   "bus": "dialogue"
+  },
+  {
+   "file": "audio/sfx/pop-mid.wav",
+   "at": 0.52,
+   "gain_db": -4,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-lo.wav",
+   "at": 14.15,
+   "gain_db": -4,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 14.75,
+   "gain_db": -8,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 17.35,
+   "gain_db": -8,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-lo.wav",
+   "at": 23.45,
+   "gain_db": 0,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-mid.wav",
+   "at": 27.55,
+   "gain_db": -4,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 25.35,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 25.507,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 25.624,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 25.729,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 25.827,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 25.92,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.01,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.096,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.18,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.263,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.343,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.421,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.499,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.575,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.649,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.723,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.796,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.868,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 26.939,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 27.009,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 27.079,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 27.147,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 27.216,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/tick.wav",
+   "at": 27.283,
+   "gain_db": -16,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 19.0,
+   "gain_db": -14,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 19.35,
+   "gain_db": -14,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 19.7,
+   "gain_db": -14,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 20.05,
+   "gain_db": -14,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 20.4,
+   "gain_db": -14,
+   "bus": "sfx"
+  },
+  {
+   "file": "audio/sfx/pop-hi.wav",
+   "at": 20.75,
+   "gain_db": -14,
+   "bus": "sfx"
+  }
+ ]
+}

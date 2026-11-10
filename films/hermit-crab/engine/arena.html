@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Duel · arena</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+</head>
+<body>
+<script>
+// "The Duel" - the film's arena. Shot S02 (the standoff).
+// Look: low-sun. Two flat tones per surface, one ink weight, one hard rim, no gradients.
+// Contract (tools/capture.mjs): window.READY, window.renderFrame(i), window.captureFrame(i).
+
+const q = new URLSearchParams(location.search);
+const W = +q.get('w') || 1920, H = +q.get('h') || 1080, SEED = +q.get('seed') || 7103;
+const FPS = 24, FRAMES = 720;
+
+const LOOK = {
+  sky: '#ef9a55', skyLow: '#e5874a',
+  water: '#1e4f70', waterLo: '#123c58', foam: '#9fc4d4',
+  sandTop: '#d98f4d', sandMid: '#b06b34', sandLo: '#8b4d22',
+  rock: '#2a3141', rockTop: '#465266', rockDark: '#191f2b',
+  shellA: '#d9473a', shellB: '#3a5d8b', prize: '#f2e4c6',
+  ink: '#120d12', rim: '#ffd39a'
+};
+
+const canvas = document.createElement('canvas');
+canvas.width = W; canvas.height = H; document.body.appendChild(canvas);
+const g = canvas.getContext('2d');
+const S = Math.min(W, H), LW = 0.0062 * S;
+
+const X = (u) => u * W, Y = (v) => v * H;
+let NOW = 0;
+const F = (c) => { g.fillStyle = c; };
+const I = (w = LW, c = LOOK.ink) => { g.strokeStyle = c; g.lineWidth = w; };
+const P = (pts) => { g.beginPath(); g.moveTo(X(pts[0][0]), Y(pts[0][1]));
+  for (let i = 1; i < pts.length; i++) g.lineTo(X(pts[i][0]), Y(pts[i][1])); g.closePath(); };
+const shape = (pts, colour, stroke = true) => { P(pts); F(colour); g.fill();
+  if (stroke) { I(); P(pts); g.stroke(); } };
+const wave = (y, amp, phase, n = 40) => { const o = []; for (let i = 0; i <= n; i++)
+  o.push([i / n * 1.1 - 0.05, y + Math.sin(i * 1.3 + phase) * amp]); return o; };
+
+// ------------------------------------------------------------------ the world
+function world(dx) {
+  g.save(); g.translate(-dx, 0);
+  g.lineJoin = 'round'; g.lineCap = 'round';
+
+  // sky
+  F(LOOK.sky); g.fillRect(-dx, 0, W + 2 * dx, H);
+  F(LOOK.skyLow); g.fillRect(-dx, Y(0.155), W + 2 * dx, Y(0.095));
+  F(LOOK.rim); g.beginPath(); g.arc(X(0.872), Y(0.082), S * 0.058, 0, 7); g.fill();
+
+  // far rock wall
+  shape([[-0.05,0.245],[0.01,0.135],[0.09,0.108],[0.16,0.170],[0.205,0.245]], LOOK.rockTop);
+  shape([[0.16,0.170],[0.205,0.245],[0.315,0.245],[0.268,0.150],[0.205,0.118]], LOOK.rockDark);
+  shape([[0.545,0.245],[0.600,0.098],[0.700,0.055],[0.790,0.105],[0.862,0.175],[0.925,0.245]], LOOK.rockTop);
+  shape([[0.790,0.105],[0.862,0.175],[0.925,0.245],[1.05,0.245],[1.03,0.128],[0.900,0.065]], LOOK.rockDark);
+  // one crack, drawn not shaded
+  I(LW * 0.55, LOOK.rockDark);
+  g.beginPath(); g.moveTo(X(0.615), Y(0.115)); g.lineTo(X(0.640), Y(0.170)); g.lineTo(X(0.628), Y(0.225)); g.stroke();
+
+  // water
+  shape(wave(0.243, 0.0045, NOW * 0.9).concat([[1.05, 0.425], [-0.05, 0.425]]), LOOK.water);
+  F(LOOK.waterLo); P([[0,0.368],[0.34,0.360],[0.68,0.371],[1,0.362],[1.05,0.425],[0,0.425]]); g.fill();
+  F(LOOK.foam); P([[0,0.243],[0.35,0.2385],[0.7,0.2455],[1,0.2405],[1.05,0.2565],[0.7,0.2615],[0.35,0.2545],[0,0.259]]); g.fill();
+  I(LW * 0.5, LOOK.foam); g.globalAlpha = 0.45;
+  [[0.06,0.300,0.10],[0.44,0.283,0.07],[0.70,0.318,0.11],[0.20,0.348,0.06],[0.86,0.336,0.08]].forEach(([x, y, w]) => {
+    g.beginPath(); g.moveTo(X(x), Y(y)); g.lineTo(X(x + w), Y(y)); g.stroke(); });
+  g.globalAlpha = 1;
+
+  // wet sand, three flat tones
+  shape(wave(0.416, 0.004, 2 + NOW * 0.7).concat([[1.05, 1.05], [-0.05, 1.05]]), LOOK.sandTop);
+  F(LOOK.sandMid); P([[0,0.690],[0.24,0.676],[0.52,0.690],[0.80,0.676],[1.05,0.690],[1.05,1.05],[0,1.05]]); g.fill();
+  F(LOOK.sandLo); P([[0,0.928],[0.30,0.910],[0.62,0.928],[1.05,0.910],[1.05,1.05],[0,1.05]]); g.fill();
+  // the wet line where the water has just left
+  I(LW * 0.9, LOOK.rim); g.globalAlpha = 0.55;
+  g.beginPath(); for (let i = 0; i <= 40; i++) { const x = i / 40; const y = 0.424 + Math.sin(i * 0.9) * 0.003;
+    g.lineTo(X(x), Y(y)); } g.stroke(); g.globalAlpha = 1;
+
+  // the ridge and the crowd: eyes only
+  F(LOOK.sandLo); P([[0,0.520],[0.16,0.508],[0.34,0.518],[0.55,0.506],[0.74,0.518],[0.90,0.508],[1.05,0.518],[1.05,0.432],[0,0.432]]); g.fill();
+  const crowd = [[0.105,0.492,1.00],[0.235,0.496,0.94],[0.352,0.489,0.82],
+                 [0.640,0.494,0.96],[0.762,0.488,0.86]];
+  crowd.forEach(([x, y, k], ci) => {
+    const r = S * 0.0140 * k, gap = r * 1.5, hx = X(x), hy = Y(y);
+    const blink = Math.max(0.18, Math.abs(Math.cos(NOW * 1.6 - ci * 0.55))) ;
+    F(LOOK.rockDark); g.beginPath(); g.arc(hx, hy + r * 2.0, r * 2.9, Math.PI, 2 * Math.PI); g.closePath(); g.fill();
+    [-gap, gap].forEach((ox) => {
+      F(LOOK.foam); g.beginPath(); g.ellipse(hx + ox - r * 0.10, hy, r, r * blink, 0, 0, 7); g.fill();
+      I(LW * 0.55); g.beginPath(); g.ellipse(hx + ox - r * 0.10, hy, r, r * blink, 0, 0, 7); g.stroke();
+      F(LOOK.ink); g.beginPath(); g.ellipse(hx + ox + r * 0.22, hy + r * 0.04, r * 0.42, r * 0.42 * blink, 0, 0, 7); g.fill();
+    });
+  });
+
+
+  // foreground: one dark stone, one wet edge
+  shape([[-0.04,1.06],[0.02,0.972],[0.10,0.958],[0.17,0.986],[0.20,1.06]], LOOK.rockDark);
+  shape([[1.04,1.06],[0.94,0.968],[0.86,0.960],[0.82,1.00],[0.84,1.06]], LOOK.rock);
+
+  g.restore();
+}
+
+// ------------------------------------------------------------------ a crab, detailed
+// Tapered limbs, a whorled shell with an aperture and growth lines, mandibles, antennae, teeth on the pincer.
+function crab(g, cx, cy, s, colour, facing, pose) {
+  pose = pose || 'stand';
+  cy = cy + Math.sin(NOW * 2.2 + cx * 0.011) * s * 0.013;
+  g.save();
+  if (pose === 'flip') { g.translate(cx, cy); g.scale(1, -1); g.translate(-cx, -cy); }
+  else if (pose === 'lunge') { g.translate(cx, cy); g.rotate(-0.10 * facing); g.translate(-cx, -cy); }
+  else if (pose === 'brace') { g.translate(cx, cy); g.rotate(0.09 * facing); g.translate(-cx, -cy); }
+  const u = (x, y) => [cx + x * s * facing, cy + y * s];
+  const ink = (w = LW * 1.0) => I(w);
+  const T = (pts) => { g.beginPath(); let p = u(pts[0][0], pts[0][1]); g.moveTo(p[0], p[1]);
+    for (let i = 1; i < pts.length; i++) { p = u(pts[i][0], pts[i][1]); g.lineTo(p[0], p[1]); } };
+  // a limb that tapers: each segment thinner, round joins
+  const leg = (pts, w) => { g.lineCap = 'round'; g.lineJoin = 'round';
+    for (let i = 1; i < pts.length; i++) {
+      ink(s * w * (1 - 0.26 * (i - 1)));
+      const a = u(pts[i - 1][0], pts[i - 1][1]), c2 = u(pts[i][0], pts[i][1]);
+      g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(c2[0], c2[1]); g.stroke(); }
+    g.lineCap = 'butt'; };
+  const joint = (x, y, r) => { const p = u(x, y); r = r * 0.62;
+    g.beginPath(); g.arc(p[0], p[1], s * r, 0, 7); F(colour); g.fill(); ink(s * 0.020); g.stroke(); };
+  const poly = (pts, fill, w = LW) => { T(pts); g.closePath(); F(fill); g.fill(); ink(w); g.stroke(); };
+
+  // shadow, long, cast left by the low sun
+  F(LOOK.sandLo); g.globalAlpha = 0.48; g.beginPath();
+  let p = u(-0.30, 0.012); g.moveTo(p[0], p[1]);
+  p = u(0.40, 0.004); g.lineTo(p[0], p[1]);
+  p = u(0.16, 0.044); g.lineTo(p[0], p[1]);
+  p = u(-0.92, 0.050); g.lineTo(p[0], p[1]);
+  g.closePath(); g.fill(); g.globalAlpha = 1;
+
+  // far legs, darker
+  leg([[-0.06,-0.28],[-0.34,-0.16],[-0.50,-0.05],[-0.60,0.0]], 0.050);
+  leg([[-0.16,-0.30],[-0.44,-0.20],[-0.62,-0.09],[-0.72,0.0]], 0.046);
+
+  // near legs: three, jointed, with pointed tips
+  leg([[0.12,-0.24],[0.30,-0.16],[0.34,-0.05],[0.36,0.0]], 0.056);
+  leg([[0.04,-0.24],[0.06,-0.14],[0.02,-0.05],[-0.01,0.0]], 0.052);
+  leg([[-0.08,-0.26],[-0.22,-0.17],[-0.28,-0.06],[-0.30,0.0]], 0.050);
+  joint(0.30,-0.16,0.030); joint(0.06,-0.14,0.027); joint(-0.22,-0.17,0.026);
+
+  // ---- the shell: fat whorl, a short spire leaning back, a thin lip
+  if (pose !== 'naked') {
+  const c = u(-0.42, -0.52);
+  const shellPath = () => {
+    let p0 = u(0.03, -0.22); g.moveTo(p0[0], p0[1]);
+    const Q = (cx1, cy1, x, y) => { const A = u(cx1, cy1), B = u(x, y); g.quadraticCurveTo(A[0], A[1], B[0], B[1]); };
+    const L = (x, y) => { const B = u(x, y); g.lineTo(B[0], B[1]); };
+    Q(-0.34, -0.04, -0.70, -0.30);
+    Q(-0.99, -0.50, -0.84, -0.84);
+    Q(-0.92, -0.92, -0.80, -1.00);
+    Q(-0.58, -0.84, -0.45, -0.78);
+    Q(-0.10, -0.62, 0.03, -0.40);
+    g.closePath();
+  };
+  shellPath(); F(colour); g.fill(); ink(LW * 1.05); g.stroke();
+  g.save(); shellPath(); g.clip();
+  F(LOOK.rim); g.globalAlpha = 0.16;
+  g.beginPath(); g.ellipse(c[0] + s * 0.14, c[1] - s * 0.22, s * 0.34, s * 0.22, -0.55, 0, 7); g.fill();
+  g.globalAlpha = 1;
+  F(LOOK.ink); g.globalAlpha = 0.16;
+  g.beginPath(); g.ellipse(c[0] - s * 0.16, c[1] + s * 0.20, s * 0.38, s * 0.17, -0.45, 0, 7); g.fill();
+  g.globalAlpha = 1; g.restore();
+  // sutures between whorls, clipped to the shell
+  g.save(); shellPath(); g.clip();
+  ink(LW * 0.60);
+  [0.74, 0.50, 0.28].forEach((k, i) => {
+    g.beginPath(); g.arc(c[0], c[1], s * 0.46 * k, -2.35 + i * 0.22, 1.55 + i * 0.28); g.stroke(); });
+  g.restore();
+  // barnacles: little cones on the whorl, inside the outline
+  [[-0.34,-0.84,0.024],[-0.47,-0.74,0.019],[-0.58,-0.54,0.017],[-0.24,-0.30,0.015]].forEach(([bx, by, br]) => {
+    const q = u(bx, by), r0 = s * br;
+    g.beginPath(); g.moveTo(q[0] - r0, q[1] + r0 * 0.55); g.lineTo(q[0] - r0 * 0.35, q[1] - r0);
+    g.lineTo(q[0] + r0 * 0.35, q[1] - r0); g.lineTo(q[0] + r0, q[1] + r0 * 0.55); g.closePath();
+    F(colour); g.fill(); ink(LW * 0.42); g.stroke();
+    ink(LW * 0.36); g.beginPath(); g.moveTo(q[0] - r0 * 0.14, q[1] - r0 * 0.50); g.lineTo(q[0], q[1] + r0 * 0.28); g.stroke();
+  });
+  // the aperture: a thin lip, a dark inside
+  const ap = u(-0.005, -0.35);
+  g.beginPath(); g.ellipse(ap[0], ap[1], s * 0.115, s * 0.155, facing * 0.30, 0, 7);
+  F(colour); g.fill(); ink(LW * 0.95); g.stroke();
+  g.beginPath(); g.ellipse(ap[0] - s * 0.008, ap[1] + s * 0.020, s * 0.066, s * 0.100, facing * 0.30, 0, 7);
+  F(LOOK.rockDark); g.fill(); ink(LW * 0.55); g.stroke();
+  } else {
+    const ab = u(-0.10, -0.40);
+    g.beginPath(); g.ellipse(ab[0], ab[1], s * 0.20, s * 0.13, facing * 0.20, 0, 7);
+    F(colour); g.fill(); ink(LW * 1.0); g.stroke();
+  }
+  // ---- head
+  const h = u(0.15, -0.36);
+  g.beginPath(); g.ellipse(h[0], h[1], s * 0.165, s * 0.135, facing * 0.10, 0, 7);
+  F(colour); g.fill(); ink(LW * 1.0); g.stroke();
+  // brow ridge and three hairs
+  ink(LW * 0.55); g.beginPath();
+  let q1 = u(0.13, -0.43), q2 = u(0.24, -0.41);
+  g.moveTo(q1[0], q1[1]); g.quadraticCurveTo((q1[0]+q2[0])/2, q1[1] - s*0.02, q2[0], q2[1]); g.stroke();
+  ink(LW * 0.36);
+  [[0.05,-0.44],[0.08,-0.47],[0.11,-0.455]].forEach(([hx, hy]) => {
+    const a1 = u(hx, hy), a2 = u(hx - 0.03, hy - 0.045);
+    g.beginPath(); g.moveTo(a1[0], a1[1]); g.lineTo(a2[0], a2[1]); g.stroke(); });
+  // mandibles
+  poly([[0.235,-0.325],[0.275,-0.300],[0.245,-0.268]], LOOK.rockDark, LW * 0.6);
+  poly([[0.205,-0.330],[0.235,-0.290],[0.190,-0.272]], LOOK.rockDark, LW * 0.6);
+  // antennas: two long, one short
+  ink(LW * 0.42); g.lineCap = 'round';
+  [[[0.26,-0.40],[0.46,-0.52],[0.60,-0.46]],[[0.24,-0.36],[0.44,-0.40],[0.66,-0.30]],[[0.27,-0.38],[0.40,-0.33]]].forEach((pts) => {
+    g.beginPath(); let a = u(pts[0][0], pts[0][1]); g.moveTo(a[0], a[1]);
+    for (let i = 1; i < pts.length; i++) { a = u(pts[i][0], pts[i][1]); g.lineTo(a[0], a[1]); } g.stroke(); });
+  g.lineCap = 'butt';
+
+  // eye stalks: three segments each, eyes with a highlight
+  leg([[0.17,-0.44],[0.19,-0.53],[0.20,-0.60]], 0.036);
+  leg([[0.10,-0.44],[0.10,-0.54],[0.105,-0.62]], 0.034);
+  [[0.205,-0.635,0.084],[0.105,-0.655,0.076]].forEach(([ex, ey, er]) => {
+    const q = u(ex, ey), r = s * er;
+    g.beginPath(); g.arc(q[0], q[1], r, 0, 7); F(LOOK.foam); g.fill(); ink(LW * 0.95); g.stroke();
+    F(LOOK.ink); g.beginPath(); g.arc(q[0] + r * 0.30 * facing, q[1] + r * 0.05, r * 0.44, 0, 7); g.fill();
+    F(LOOK.prize); g.beginPath(); g.arc(q[0] - r * 0.22 + r * 0.30 * facing, q[1] - r * 0.30, r * 0.20, 0, 7); g.fill(); });
+
+  // small claw (far side)
+  leg([[0.17,-0.30],[0.34,-0.34],[0.42,-0.38]], 0.062);
+  pincer(u(0.50, -0.40), s * 0.098, facing, 0.20, colour, 2);
+  // big claw (near side), raised
+  leg([[0.15,-0.26],[0.40,-0.42],[0.52,-0.58]], 0.090);
+  joint(0.40,-0.42,0.034);
+  pincer(u(0.60, -0.66), s * 0.155, facing, -0.62, colour, 3);
+  g.restore();
+}
+
+// a claw: a palm, a fixed finger and a movable finger, each with teeth
+function pincer(p, r, facing, tilt, colour, teeth) {
+  g.save(); g.translate(p[0], p[1]); g.scale(facing, 1); g.rotate(tilt);
+  // palm
+  g.beginPath();
+  g.moveTo(-r * 0.95, -r * 0.30);
+  g.quadraticCurveTo(-r * 0.70, -r * 1.00, r * 0.30, -r * 0.90);
+  g.quadraticCurveTo(r * 0.95, -r * 0.72, r * 0.95, -r * 0.05);
+  g.quadraticCurveTo(r * 0.90, r * 0.72, r * 0.10, r * 0.86);
+  g.quadraticCurveTo(-r * 0.75, r * 0.85, -r * 0.95, -r * 0.30);
+  g.closePath(); F(colour); g.fill(); I(LW * 1.0); g.stroke();
+  // hinge
+  F(LOOK.ink); g.beginPath(); g.arc(-r * 0.30, r * 0.05, r * 0.11, 0, 7); g.fill();
+  // fixed finger (upper)
+  g.beginPath(); g.moveTo(r * 0.55, -r * 0.72);
+  g.quadraticCurveTo(r * 1.55, -r * 0.85, r * 1.95, -r * 0.30);
+  g.quadraticCurveTo(r * 1.45, -r * 0.18, r * 0.80, -r * 0.20);
+  g.closePath(); F(colour); g.fill(); I(LW * 0.95); g.stroke();
+  // movable finger (lower)
+  g.beginPath(); g.moveTo(r * 0.70, r * 0.10);
+  g.quadraticCurveTo(r * 1.50, r * 0.02, r * 1.80, r * 0.34);
+  g.quadraticCurveTo(r * 1.30, r * 0.48, r * 0.60, r * 0.52);
+  g.closePath(); F(colour); g.fill(); I(LW * 0.95); g.stroke();
+  // teeth
+  I(LW * 0.65);
+  for (let i = 0; i < 2; i++) {
+    const t0 = 0.85 + i * 0.34;
+    g.beginPath(); g.moveTo(r * t0, -r * 0.34); g.lineTo(r * (t0 + 0.10), -r * 0.50); g.stroke();
+    g.beginPath(); g.moveTo(r * t0, r * 0.30); g.lineTo(r * (t0 + 0.10), r * 0.46); g.stroke(); }
+  // hairs on the palm
+  I(LW * 0.34);
+  [[-0.55,-0.55],[-0.35,-0.70],[-0.15,-0.78]].forEach(([hx, hy]) => {
+    g.beginPath(); g.moveTo(r * hx, r * hy); g.lineTo(r * (hx - 0.20), r * (hy - 0.30)); g.stroke(); });
+  g.restore();
+}
+
+// the prize: the same whorl, in cream, with an open mouth
+function shell(g, cx, cy, s, rot, colour, withShadow) {
+  g.save(); g.translate(cx, cy); g.rotate(rot);
+  if (withShadow) { F(LOOK.ink); g.globalAlpha = 0.26;
+    g.beginPath(); g.arc(0, 0, s * 0.48, 0, 7); g.fill(); g.globalAlpha = 1; g.restore(); return; }
+  g.beginPath(); g.ellipse(0, 0, s * 0.47, s * 0.44, 0.1, 0, 7);
+  F(colour); g.fill(); I(LW * 1.05); g.stroke();
+  g.save(); g.beginPath(); g.ellipse(0, 0, s * 0.47, s * 0.44, 0.1, 0, 7); g.clip();
+  F(LOOK.rim); g.globalAlpha = 0.30;
+  g.beginPath(); g.ellipse(s * 0.16, -s * 0.18, s * 0.34, s * 0.26, 0.1, 0, 7); g.fill(); g.globalAlpha = 1;
+  g.restore();
+  I(LW * 0.55);
+  [0.66, 0.40, 0.18].forEach((k) => { g.beginPath(); g.arc(0, 0, s * 0.47 * k, -0.7, 4.2); g.stroke(); });
+  // the mouth
+  g.beginPath(); g.ellipse(s * 0.40, s * 0.06, s * 0.10, s * 0.26, 0.22, 0, 7);
+  F(LOOK.rockDark); g.fill(); I(LW * 0.85); g.stroke();
+  g.beginPath();
+  F(LOOK.prize); g.globalAlpha = 0.35; g.fill(); g.globalAlpha = 1;
+  g.restore();
+}
+// ---------------------------------------------------------------- shots
+const SHOTS = [
+  { id:'S01', a:0,   b:58  }, { id:'S02', a:58,  b:118 }, { id:'S03', a:118, b:158 },
+  { id:'S04', a:158, b:209 }, { id:'S05', a:209, b:274 }, { id:'S06', a:274, b:305 },
+  { id:'S07', a:305, b:384 }, { id:'S08', a:384, b:480 }, { id:'S09', a:480, b:720 }
+];
+const FPS2 = 24;
+const ease = (u) => u * u * (3 - 2 * u);
+const lerp = (x, y, u) => x + (y - x) * u;
+
+function camera(id, u) {
+  switch (id) {
+    case 'S01': return { k: lerp(3.2, 1.0, ease(u)), fx: lerp(0.30, 0.50, ease(u)), fy: lerp(0.88, 0.60, ease(u)) };
+    case 'S02': return { k: 1.0, fx: 0.5 + 0.014 * u, fy: 0.585 };
+    case 'S03': return { k: lerp(1.95, 2.40, ease(u)), fx: lerp(0.38, 0.54, u), fy: 0.520 };
+    case 'S04': return { k: 2.05, fx: 0.34, fy: 0.755 };
+    case 'S05': return { k: lerp(1.30, 1.52, ease(u)), fx: 0.47, fy: 0.735 };
+    case 'S06': return { k: 1.55, fx: 0.46, fy: 0.760 };
+    case 'S07': return { k: 1.03, fx: 0.50, fy: 0.615 };
+    case 'S08': return { k: lerp(1.85, 2.30, ease(u)), fx: 0.53, fy: 0.705 };
+    case 'S09': return { k: lerp(2.5, 4.4, u * u), fx: 0.52, fy: 0.615 };
+    default:    return { k: 1.0, fx: 0.5, fy: 0.6 };
+  }
+}
+
+// flat sand burst: a fan of grit, no blur
+function burst(cx, cy, r, n, spread, seed) {
+  for (let i = 0; i < n; i++) {
+    const a = -Math.PI / 2 + (i / (n - 1) - 0.5) * spread + Math.sin(i * 12.9 + seed) * 0.09;
+    const d = r * (0.45 + 0.55 * Math.abs(Math.sin(i * 7.3 + seed)));
+    const x = cx + Math.cos(a) * d, y = cy + Math.sin(a) * d * 0.62;
+    const s2 = r * (0.020 + 0.020 * Math.abs(Math.cos(i * 3.1)));
+    g.beginPath(); g.moveTo(cx, cy);
+    g.lineTo(x - s2, y); g.lineTo(x + s2, y); g.closePath();
+    F(i % 3 ? LOOK.sandTop : LOOK.sandMid); g.fill();
+  }
+}
+
+// a cloud of sand: four flat blobs over the fight
+function sandCloud(cx, cy, r) {
+  const lobes = [[-0.98, 0.62, 0.06], [-0.52, 0.88, -0.04], [0.02, 1.02, -0.10], [0.56, 0.84, -0.02], [0.98, 0.60, 0.08]];
+  lobes.forEach(([ox, rr, oy]) => {
+    g.beginPath(); g.arc(cx + ox * r * 0.66, cy + oy * r, r * rr * 0.70, Math.PI, 2 * Math.PI); g.closePath();
+    F(LOOK.sandMid); g.fill();
+  });
+  F(LOOK.sandMid); g.fillRect(cx - r * 1.05, cy - r * 0.05, r * 2.10, r * 0.85);
+  I(LW * 0.55);
+  lobes.forEach(([ox, rr, oy]) => {
+    g.beginPath(); g.arc(cx + ox * r * 0.66, cy + oy * r, r * rr * 0.70, Math.PI, 2 * Math.PI); g.stroke();
+  });
+  I(LW * 0.35);
+  [[-0.30, 0.34, 0.16], [0.34, 0.30, -0.12]].forEach(([ox, rr, oy]) => {
+    g.beginPath(); g.arc(cx + ox * r, cy + oy * r, r * rr, Math.PI * 1.06, Math.PI * 1.94); g.stroke();
+  });
+}
+// the queue: eye pairs that have stepped off the ridge
+function queue(rows, scale, alpha) {
+  rows.forEach(([x, y, k], i) => {
+    const r = S * 0.020 * k * scale, gap = r * 1.5, hx = X(x), hy = Y(y);
+    F(LOOK.rockDark); g.beginPath(); g.arc(hx, hy + r * 2.1, r * 3.0, Math.PI, 2 * Math.PI); g.closePath(); g.fill();
+    [-gap, gap].forEach((ox) => {
+      F(LOOK.foam); g.beginPath(); g.arc(hx + ox - r * 0.10, hy, r, 0, 7); g.fill();
+      I(LW * 0.5); g.beginPath(); g.arc(hx + ox - r * 0.10, hy, r, 0, 7); g.stroke();
+      F(LOOK.ink); g.beginPath(); g.arc(hx + ox + r * 0.22, hy + r * 0.04, r * 0.42, 0, 7); g.fill();
+    });
+  });
+}
+
+function actors(id, t, L) {
+  const A = (x, y, s, pose) => crab(g, X(x), Y(y), S * s, LOOK.shellA, 1, pose);
+  const B = (x, y, s, pose) => crab(g, X(x), Y(y), S * s, LOOK.shellB, -1, pose);
+  const prize = (x, y, s) => {
+    shell(g, X(x), Y(y), S * s, -0.16, LOOK.prize, true);
+    F(LOOK.sandLo); g.globalAlpha = 0.72;
+    P([[x - 0.082, y + 0.040], [x + 0.082, y + 0.034], [x + 0.066, y + 0.064], [x - 0.096, y + 0.070]]);
+    g.fill(); g.globalAlpha = 1;
+    shell(g, X(x), Y(y), S * s, -0.16, LOOK.prize, false);
+  };
+
+  switch (id) {
+    case 'S01': {                       // the first blow, then the arena opens
+      burst(X(0.30), Y(0.99), S * 0.44, 17, 2.5, 3);
+      A(0.30, 1.02 - 0.030 * Math.min(1, t / 0.5), 0.42, t < 0.45 ? 'lunge' : 'brace');
+      break;
+    }
+    case 'S02': {                       // the standoff
+      prize(0.500, 0.836, 0.170);
+      const step = Math.min(1, t / 2.2);
+      A(0.238 + 0.030 * step, 0.952, 0.360, step > 0.55 ? 'brace' : 'stand');
+      B(0.762 - 0.030 * step, 0.952, 0.360, step > 0.75 ? 'lunge' : 'stand');
+      break;
+    }
+    case 'S03': { const step = Math.min(1, t / 2.0); queue([[0.36, 0.520 - 0.020 * step, 0.80]], 0.55, 1); break; }                  // the ridge only
+    case 'S04': {                       // the rules, tapped on the sand
+      const ant = (t > 0.78 && t < 0.88) || (t > 1.78 && t < 1.88);
+      const tap = (t > 0.88 && t < 1.08) || (t > 1.88 && t < 2.08) ? 1 : 0;
+      if (tap) burst(X(0.30), Y(0.985), S * 0.09, 5, 1.4, t);
+      A(0.34, ant ? 0.942 : 0.965, 0.40, ant ? 'lunge' : 'stand');
+      break;
+    }
+    case 'S05': {                       // the charge and the cloud
+      const u = Math.min(1, t / 0.9);
+      A(lerp(0.30, 0.42, u), 0.965, 0.40, 'lunge');
+      B(lerp(0.74, 0.60, u), 0.965, 0.40, 'brace');
+      if (t > 0.75) sandCloud(X(0.51), Y(0.86), S * (0.16 + 0.10 * Math.min(1, (t - 0.75) / 1.2)));
+      break;
+    }
+    case 'S06': {                       // one down, one standing over it
+      A(0.395, 0.955, 0.400, 'stand');
+      B(0.560, 0.955, 0.400, 'flip');
+      break;
+    }
+    case 'S07': {                       // the loser walks off with nothing on its back
+      A(0.300, 0.955, 0.395, 'stand');
+      B(lerp(0.700, 0.880, Math.min(1, t / 2.6)), 0.955, 0.330, 'naked');
+      break;
+    }
+    case 'S08': {                       // the prize taken, and the queue has arrived
+      A(0.420, 0.955, 0.400, 'stand');
+      queue([[0.60, 0.700, 1.00], [0.72, 0.688, 0.92], [0.84, 0.702, 0.86], [0.95, 0.690, 0.80]],
+            0.85 + 0.25 * Math.min(1, t / L), 1);
+      break;
+    }
+    case 'S09': {                       // the line fills the frame
+      const push = Math.min(1, t / L);
+      queue([[0.30, 0.560, 1.30], [0.50, 0.545, 1.40], [0.70, 0.560, 1.25], [0.88, 0.548, 1.15]],
+            1.0 + 0.9 * push, 1);
+      const ex = X(0.505), ey = Y(0.620), r = S * (0.052 - 0.020 * push);
+      F(LOOK.foam); g.beginPath(); g.arc(ex, ey, r, 0, 7); g.fill();
+      I(LW * 1.0); g.beginPath(); g.arc(ex, ey, r, 0, 7); g.stroke();
+      F(LOOK.ink); g.beginPath(); g.arc(ex + r * 0.24, ey + r * 0.05, r * 0.44, 0, 7); g.fill();
+      break;
+    }
+  }
+}
+
+function shotAt(f) {
+  for (const s of SHOTS) if (f >= s.a && f < s.b) return s;
+  return SHOTS[SHOTS.length - 1];
+}
+
+window.renderFrame = (i) => {
+  NOW = i / 24;
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  const sh = shotAt(i);
+  const t = (i - sh.a) / FPS2, L = (sh.b - sh.a) / FPS2;
+  const cam = camera(sh.id, Math.max(0, Math.min(1, t / L)));
+  g.save();
+  g.translate(W / 2, H / 2); g.scale(cam.k, cam.k); g.translate(-cam.fx * W, -cam.fy * H);
+  world(0);
+  actors(sh.id, t, L);
+  g.restore();
+  if (sh.id === 'S09') {                                  // the cut to black
+    const p = Math.max(0, (t - (L - 1.2)) / 1.2);
+    if (p > 0) { F(LOOK.ink); g.globalAlpha = p * 0.92; g.fillRect(0, 0, W, H); g.globalAlpha = 1; }
+  }
+};
+window.captureFrame = (i, type = 'image/png', quality = 0.95) => { window.renderFrame(i); return canvas.toDataURL(type, quality); };
+window.READY = Promise.resolve({ frames: 720, fps: FPS2, width: W, height: H, renderer: 'canvas2d' });
+window.renderFrame(0);
+</script>
+</body>
+</html>

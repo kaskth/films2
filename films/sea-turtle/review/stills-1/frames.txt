@@ -1,0 +1,12 @@
+file 'D:/coda/films2/films/sea-turtle/review/stills-1/000029.jpg'
+duration 1
+file 'D:/coda/films2/films/sea-turtle/review/stills-1/000108.jpg'
+duration 1
+file 'D:/coda/films2/films/sea-turtle/review/stills-1/000240.jpg'
+duration 1
+file 'D:/coda/films2/films/sea-turtle/review/stills-1/000312.jpg'
+duration 1
+file 'D:/coda/films2/films/sea-turtle/review/stills-1/000358.jpg'
+duration 1
+file 'D:/coda/films2/films/sea-turtle/review/stills-1/000430.jpg'
+duration 1

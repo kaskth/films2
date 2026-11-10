@@ -1,0 +1,92 @@
+{
+ "deals": [
+  {
+   "category": "spark",
+   "seed": "2026-11-10:hermit-crab#1",
+   "dealt": [
+    "s1",
+    "s2",
+    "s3"
+   ],
+   "redeal_reason": null,
+   "pick": "s1",
+   "reason": "a cross-section and a dare: the duel is a dare with rules, and one slice through the pool gives the arena a single readable shape",
+   "at": "2026-11-10T13:34",
+   "texts": {
+    "s1": "seed: Border · place: a public swimming pool in August · form: a cross-section · medium: X-ray · engine: a dare · tone: lyrical",
+    "s2": "seed: Yakushima · place: a bowling alley · form: a before and after · medium: ebru marbling · tone: serene · era: the Silk Road",
+    "s3": "seed: Oenotria Scopuli - False Color · place: a snow globe · form: a comic strip in panels · medium: Ottoman miniature · era: Ramadan evening · tone: noir"
+   },
+   "seeds": {
+    "s1": {
+     "name": "Border",
+     "fact": "Embroidery, Greece, Ionian Islands, 16th-17th century, 1500s - 1600s, embroidery: silk on linen tabby ground",
+     "link": "https://clevelandart.org/art/1927.13",
+     "pool": "museum"
+    },
+    "s2": {
+     "name": "Yakushima",
+     "fact": "Yakushima (屋久島) is one of the Ōsumi Islands in Kagoshima Prefecture, Japan. The island, 504.88 km2 (194.94 sq mi) in area, has a population of 11,858. It is accessible by hydrofoil ferry, car ferry, or by air to Yakushima Airport.",
+     "link": "https://en.wikipedia.org/wiki/Yakushima",
+     "pool": "place"
+    },
+    "s3": {
+     "name": "Oenotria Scopuli - False Color",
+     "fact": "The THEMIS VIS camera contains 5 filters. The data from different filters can be combined in multiple ways to create a false color image. These false color images may reveal subtle variations of the surface not easily identified in a single band image.",
+     "link": "https://images.nasa.gov/details/PIA19739",
+     "pool": "sky"
+    }
+   }
+  },
+  {
+   "category": "angle",
+   "seed": "2026-11-10:hermit-crab#1",
+   "dealt": [
+    "scale-flip",
+    "aftermath-only",
+    "opposite-premise"
+   ],
+   "redeal_reason": null,
+   "pick": "scale-flip",
+   "reason": "the pool shot at crab level: a shell is a stadium and the watching crowd is a skyline",
+   "at": "2026-11-10T13:34"
+  },
+  {
+   "category": "sound",
+   "seed": "2026-11-10:hermit-crab#1",
+   "dealt": [
+    "on-the-grid",
+    "close-and-quiet",
+    "only-the-microphone"
+   ],
+   "redeal_reason": null,
+   "pick": "only-the-microphone",
+   "reason": "no music was chosen, so the pool's own signature - water slap, shell clatter, grit under claw - carries the film",
+   "at": "2026-11-10T13:34"
+  },
+  {
+   "category": "look",
+   "seed": "2026-11-10:hermit-crab#1",
+   "dealt": [
+    "l1",
+    "l2",
+    "l3",
+    "l4",
+    "l5",
+    "l6"
+   ],
+   "redeal_reason": null,
+   "pick": null,
+   "reason": null,
+   "at": "2026-11-10T13:51",
+   "texts": {
+    "l1": "Vittorio Storaro: colour as meaning, theatrical saturated light",
+    "l2": "Alex Webb: complex layered street colour, deep shadow",
+    "l3": "Conrad Hall: chiaroscuro rain and sun, poetic contrast",
+    "l4": "Linocut: carved marks, two colours",
+    "l5": "Néstor Almendros: magic hour, natural window light",
+    "l6": "Sofia Coppola: pastel melancholy, natural light, stillness"
+   }
+  }
+ ]
+}

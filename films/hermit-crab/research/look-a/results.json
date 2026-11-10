@@ -1,0 +1,48 @@
+{
+ "query": "cat:Vittorio Storaro",
+ "type": "image",
+ "results": [
+  {
+   "source": "filmgrab",
+   "id": "155586",
+   "title": "Reds",
+   "creator": "Biography, Richard Sylbert",
+   "licence": "mood-only",
+   "page": "https://film-grab.com/2026/03/31/reds/",
+   "file": null,
+   "thumb": "https://film-grab.com/wp-content/uploads/2023/12/Reds-41-768x416.jpg",
+   "type": "still",
+   "year": "1981",
+   "use": "mood-only",
+   "n": 1
+  },
+  {
+   "source": "filmgrab",
+   "id": "158809",
+   "title": "The Last Emperor",
+   "creator": "Bernardo Bertolucci, Biography",
+   "licence": "mood-only",
+   "page": "https://film-grab.com/2024/08/13/the-last-emperor/",
+   "file": null,
+   "thumb": "https://film-grab.com/wp-content/uploads/2024/05/The-Last-Emperor-13-768x381.jpg",
+   "type": "still",
+   "year": "1987",
+   "use": "mood-only",
+   "n": 2
+  },
+  {
+   "source": "filmgrab",
+   "id": "155893",
+   "title": "Dick Tracy",
+   "creator": "Comic, Crime",
+   "licence": "mood-only",
+   "page": "https://film-grab.com/2024/02/20/dick-tracy/",
+   "file": null,
+   "thumb": "https://film-grab.com/wp-content/uploads/2023/12/Dick-Tracy-59-768x416.jpg",
+   "type": "still",
+   "year": "1990",
+   "use": "mood-only",
+   "n": 3
+  }
+ ]
+}

@@ -1,0 +1,2725 @@
+{
+  "text": [],
+  "stickers": [
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 2.6,
+      "t1": 9.12,
+      "bbox": [
+        0.45,
+        0.455,
+        0.15,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 2.7,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_01",
+      "image": "packaging/sticker_01.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "static_sticker",
+      "kind_zh": "static sticker / image",
+      "t0": 32.99,
+      "t1": 37.76,
+      "bbox": [
+        0.8,
+        0.273,
+        0.2,
+        0.273
+      ],
+      "animated": false,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 2.2,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_02",
+      "image": "packaging/sticker_02.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 38.63,
+      "t1": 48.62,
+      "bbox": [
+        0.75,
+        0.364,
+        0.1,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 13.0,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_03",
+      "image": "packaging/sticker_03.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 88.99,
+      "t1": 93.33,
+      "bbox": [
+        0.0,
+        0.636,
+        0.15,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 3.5,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_04",
+      "image": "packaging/sticker_04.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 135.87,
+      "t1": 141.51,
+      "bbox": [
+        0.45,
+        0.182,
+        0.1,
+        0.273
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 10.6,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_05",
+      "image": "packaging/sticker_05.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 150.62,
+      "t1": 153.23,
+      "bbox": [
+        0.85,
+        0.182,
+        0.15,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 7.6,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_06",
+      "image": "packaging/sticker_06.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 150.62,
+      "t1": 153.23,
+      "bbox": [
+        0.45,
+        0.182,
+        0.1,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 7.6,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_07",
+      "image": "packaging/sticker_07.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 312.53,
+      "t1": 319.91,
+      "bbox": [
+        0.45,
+        0.182,
+        0.3,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 3.1,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_09",
+      "image": "packaging/sticker_09.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "static_sticker",
+      "kind_zh": "static sticker / image",
+      "t0": 320.78,
+      "t1": 326.86,
+      "bbox": [
+        0.65,
+        0.545,
+        0.15,
+        0.182
+      ],
+      "animated": false,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 1.9,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_10",
+      "image": "packaging/sticker_10.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "static_sticker",
+      "kind_zh": "static sticker / image",
+      "t0": 327.73,
+      "t1": 334.67,
+      "bbox": [
+        0.35,
+        0.273,
+        0.1,
+        0.364
+      ],
+      "animated": false,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 2.3,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_11",
+      "image": "packaging/sticker_11.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 329.9,
+      "t1": 336.84,
+      "bbox": [
+        0.15,
+        0.455,
+        0.1,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 2.9,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_12",
+      "image": "packaging/sticker_12.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "static_sticker",
+      "kind_zh": "static sticker / image",
+      "t0": 483.56,
+      "t1": 487.9,
+      "bbox": [
+        0.35,
+        0.0,
+        0.15,
+        0.182
+      ],
+      "animated": false,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 1.4,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_13",
+      "image": "packaging/sticker_13.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 513.94,
+      "t1": 516.11,
+      "bbox": [
+        0.55,
+        0.545,
+        0.1,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 8.6,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_14",
+      "image": "packaging/sticker_14.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 609.44,
+      "t1": 612.48,
+      "bbox": [
+        0.5,
+        0.273,
+        0.1,
+        0.273
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 18.8,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_15",
+      "image": "packaging/sticker_15.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 625.07,
+      "t1": 627.67,
+      "bbox": [
+        0.25,
+        0.636,
+        0.1,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 20.6,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_16",
+      "image": "packaging/sticker_16.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 687.57,
+      "t1": 690.18,
+      "bbox": [
+        0.65,
+        0.364,
+        0.1,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 6.1,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_17",
+      "image": "packaging/sticker_17.jpg",
+      "persistent": {
+        "cuts": 1
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 743.13,
+      "t1": 747.91,
+      "bbox": [
+        0.3,
+        0.455,
+        0.15,
+        0.545
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 14.6,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_18",
+      "image": "packaging/sticker_18.jpg",
+      "persistent": {
+        "cuts": 2
+      }
+    },
+    {
+      "kind": "animated_sticker",
+      "kind_zh": "animated sticker / GIF",
+      "t0": 743.13,
+      "t1": 747.91,
+      "bbox": [
+        0.05,
+        0.727,
+        0.15,
+        0.182
+      ],
+      "animated": true,
+      "loop_period_s": null,
+      "looping": false,
+      "activity": 4.9,
+      "appears_mid_shot": false,
+      "disappears_mid_shot": false,
+      "crosses_cut": true,
+      "confidence": "medium",
+      "id": "sticker_19",
+      "image": "packaging/sticker_19.jpg",
+      "persistent": {
+        "cuts": 2
+      }
+    }
+  ],
+  "sfx": [
+    {
+      "t": 2.589,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": 0.011,
+        "ref": "sticker_01"
+      }
+    },
+    {
+      "t": 2.844,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 7.779,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 7.976,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 9.52,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": 0.063,
+        "ref": null
+      }
+    },
+    {
+      "t": 10.031,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 12.806,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 14.408,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 14.582,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 15.406,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.073,
+        "ref": null
+      }
+    },
+    {
+      "t": 18.344,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 25.263,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.096,
+        "ref": null
+      }
+    },
+    {
+      "t": 35.48,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 36.49,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 38.684,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": -0.054,
+        "ref": "sticker_03"
+      }
+    },
+    {
+      "t": 52.326,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.034,
+        "ref": null
+      }
+    },
+    {
+      "t": 53.522,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 53.812,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 54.741,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 55.554,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 56.297,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 57.574,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 57.887,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 58.654,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.071,
+        "ref": null
+      }
+    },
+    {
+      "t": 66.038,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 68.209,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 68.719,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 73.398,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 75.209,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 87.829,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 88.921,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": 0.069,
+        "ref": "sticker_04"
+      }
+    },
+    {
+      "t": 91.788,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 92.984,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 97.303,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 97.384,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 109.18,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 109.912,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 112.826,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 113.337,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 121.8,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 122.915,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 126.7,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 127.315,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 143.197,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 156.688,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 157.292,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": 0.041,
+        "ref": null
+      }
+    },
+    {
+      "t": 165.013,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 165.094,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 166.475,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 173.279,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 173.523,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 176.344,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 182.787,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 190.984,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 193.202,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 193.805,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 196.569,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 196.685,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 198.774,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 202.408,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 204.858,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 212.323,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 212.927,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 213.658,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 213.995,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 220.137,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 220.508,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 221.495,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 221.983,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 225.106,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.106,
+        "ref": null
+      }
+    },
+    {
+      "t": 225.686,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 226.069,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 228.055,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 228.299,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 234.672,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 248.326,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 271.081,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 277.606,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 278.013,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 278.663,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 282.25,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": 0.042,
+        "ref": null
+      }
+    },
+    {
+      "t": 283.458,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 288.148,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 288.311,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 290.11,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.068,
+        "ref": null
+      }
+    },
+    {
+      "t": 290.621,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 293.79,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.082,
+        "ref": null
+      }
+    },
+    {
+      "t": 308.5,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 312.494,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": 0.036,
+        "ref": "sticker_09"
+      }
+    },
+    {
+      "t": 313.794,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 319.031,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 319.39,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 319.576,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 320.482,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.065,
+        "ref": null
+      }
+    },
+    {
+      "t": 320.83,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "static sticker / image appears",
+        "dt": -0.05,
+        "ref": "sticker_10"
+      }
+    },
+    {
+      "t": 324.313,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.105,
+        "ref": null
+      }
+    },
+    {
+      "t": 329.758,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": 0.142,
+        "ref": "sticker_12"
+      }
+    },
+    {
+      "t": 330.025,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": -0.125,
+        "ref": "sticker_12"
+      }
+    },
+    {
+      "t": 330.757,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 336.504,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 338.129,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 344.561,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 345.385,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 347.568,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 347.661,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 353.373,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 353.443,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 353.547,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 353.64,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 354.0,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 355.312,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": 0.063,
+        "ref": null
+      }
+    },
+    {
+      "t": 355.463,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.088,
+        "ref": null
+      }
+    },
+    {
+      "t": 358.296,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 359.12,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 361.686,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 361.813,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 365.331,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 367.572,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 367.99,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.157,
+        "ref": null
+      }
+    },
+    {
+      "t": 372.378,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 373.214,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 377.998,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 385.625,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 385.985,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 387.796,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 388.319,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 393.137,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 393.242,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 399.499,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 400.324,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 405.037,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 405.838,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 406.361,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.111,
+        "ref": null
+      }
+    },
+    {
+      "t": 409.925,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 419.329,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 435.769,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 435.897,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 436.825,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": 0.05,
+        "ref": null
+      }
+    },
+    {
+      "t": 436.976,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.101,
+        "ref": null
+      }
+    },
+    {
+      "t": 452.673,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 453.323,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 470.471,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 472.282,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.115,
+        "ref": null
+      }
+    },
+    {
+      "t": 472.607,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 474.419,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 478.772,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 482.0,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 485.576,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.076,
+        "ref": null
+      }
+    },
+    {
+      "t": 485.843,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 487.015,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 487.398,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 488.606,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.064,
+        "ref": null
+      }
+    },
+    {
+      "t": 489.767,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 490.336,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 491.09,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 493.923,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 496.686,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 496.93,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 497.174,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 497.429,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 500.297,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 500.448,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 501.551,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 502.178,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.095,
+        "ref": null
+      }
+    },
+    {
+      "t": 503.084,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 504.094,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 504.604,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 510.282,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 510.572,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 510.839,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 511.408,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 513.892,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": 0.048,
+        "ref": "sticker_14"
+      }
+    },
+    {
+      "t": 518.339,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 519.059,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 519.744,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 527.256,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 532.12,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.078,
+        "ref": null
+      }
+    },
+    {
+      "t": 537.554,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 539.411,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.119,
+        "ref": null
+      }
+    },
+    {
+      "t": 549.105,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 551.335,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 551.439,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 558.8,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.092,
+        "ref": null
+      }
+    },
+    {
+      "t": 558.974,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 586.002,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 586.234,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 592.469,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 593.014,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.097,
+        "ref": null
+      }
+    },
+    {
+      "t": 593.154,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 593.293,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 593.525,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 609.535,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": -0.095,
+        "ref": "sticker_15"
+      }
+    },
+    {
+      "t": 611.904,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 613.529,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 616.397,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 617.999,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 623.665,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 628.065,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.065,
+        "ref": null
+      }
+    },
+    {
+      "t": 628.599,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 630.004,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 633.185,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 634.834,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 635.635,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 636.436,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 638.038,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.08,
+        "ref": null
+      }
+    },
+    {
+      "t": 641.66,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 642.949,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 643.762,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 644.783,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 651.076,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 665.739,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.031,
+        "ref": null
+      }
+    },
+    {
+      "t": 674.749,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 674.923,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 677.152,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 678.15,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 679.369,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 682.632,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 683.166,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 687.787,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 693.127,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.085,
+        "ref": null
+      }
+    },
+    {
+      "t": 693.325,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 693.429,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 693.696,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 694.915,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 695.542,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.125,
+        "ref": null
+      }
+    },
+    {
+      "t": 701.045,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 701.521,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 706.223,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 706.572,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 710.461,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 710.716,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 710.902,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 711.134,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 712.191,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 712.702,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 712.887,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 714.014,
+      "type": "ding",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.097,
+        "ref": null
+      }
+    },
+    {
+      "t": 714.629,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 714.768,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 718.274,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 722.094,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 723.638,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 723.824,
+      "type": "typing",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 724.172,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 724.288,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 731.138,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 739.556,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 740.508,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 743.004,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": 0.126,
+        "ref": "sticker_18"
+      }
+    },
+    {
+      "t": 743.213,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic_anchored",
+      "confidence": "low",
+      "on": {
+        "type": "sticker_in",
+        "what": "animated sticker / GIF appears",
+        "dt": -0.083,
+        "ref": "sticker_18"
+      }
+    },
+    {
+      "t": 744.49,
+      "type": "hit",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 753.511,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": {
+        "type": "cut",
+        "what": "cut",
+        "dt": -0.011,
+        "ref": null
+      }
+    },
+    {
+      "t": 757.47,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 757.795,
+      "type": "pop",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 764.389,
+      "type": "whoosh",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    },
+    {
+      "t": 769.811,
+      "type": "click",
+      "description": null,
+      "source": "deterministic",
+      "confidence": "low",
+      "on": null
+    }
+  ]
+}
