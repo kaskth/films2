@@ -54,10 +54,16 @@ as compatibility sources, so the film skills appear whichever harness you open t
 
 | Missing | Why |
 | :--- | :--- |
-| `refs\king_cobra.mp4` | The reference film belongs to its creator. It was studied for form only and is not redistributed here. |
-| `refs\stills\` | Frames of that same film. |
+| `refs\king_cobra.mp4` | The reference film itself belongs to its creator. It is not redistributed. |
+| `refs\stills\` | Six hand-picked frames; identical material is already in `research\rea-output\shots`. |
 | `research\rea-output\stems\` | Three 131 MB WAVs, over GitHub's 100 MB file limit, and derived: `rea-video stems refs/king_cobra.mp4` rebuilds them. |
 | `films\*\renders\picture-*.mp4` | Intermediate picture-only renders; the draft cuts are kept. |
+
+The **analysis itself is complete**: `research\rea-output\` holds the report, the raw breakdown, the
+storyboard, the audio map, the packaging timeline with the sticker crops, and all 3,024 per-shot
+evidence images (contact sheet, first and last frame, element crops). `research\ref-video\` holds the
+form measurements, the beat grid and 264 shot thumbnails. Those images *are* frames of the reference
+film, kept as evidence for the breakdown; the film file is not included.
 
 ## The films
 
@@ -76,4 +82,6 @@ Rendering needs Node 22+, Python 3, ffmpeg and Chrome. Nothing else; no paid ser
 
 - `cinecode` — MIT, © LemoLab / sarpstar. Licence text in `.agents\skills\cinecode\LICENSE`.
 - `rea-video` — see `.agents\skills\rea-video\LICENSE` and `NOTICE`.
-- The reference film is quoted as form and measurements only. No frame of it is redistributed.
+- The reference film is studied for form and measurement only. The film file and its audio stems are
+  not redistributed; the per-shot evidence frames in `research/` are included because they are the
+  analysis itself.
